@@ -12,8 +12,8 @@ function PlanetarySystem() {
   });
 
   // Sun
-  const { sphere } = useSphere({ color: "#fb2", radius: 2 });
-  scene.add(sphere);
+  const { sphere: sun } = useSphere({ color: "#fb2", radius: 2 });
+  scene.add(sun);
 
   // Planets
   const [planet1, p1Start] = usePlanet({ orbitRadius: 4, planetRadius: 0.3 });
