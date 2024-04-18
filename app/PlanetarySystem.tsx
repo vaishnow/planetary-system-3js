@@ -16,11 +16,11 @@ function PlanetarySystem() {
   scene.add(sphere);
 
   // Planets
-  const [planet1, p1Start] = usePlanet({ orbitRadius: 4, planetRadius: 1 });
-  const [planet2, p2Start] = usePlanet({ orbitRadius: 6, planetRadius: 1 });
-  const [planet3, p3Start] = usePlanet({ orbitRadius: 8, planetRadius: 1 });
-  const [planet4, p4Start] = usePlanet({ orbitRadius: 10, planetRadius: 1 });
-  const [planet5, p5Start] = usePlanet({ orbitRadius: 12, planetRadius: 1 });
+  const [planet1, p1Start] = usePlanet({ orbitRadius: 4, planetRadius: 0.3 });
+  const [planet2, p2Start] = usePlanet({ orbitRadius: 6, planetRadius: 0.6 });
+  const [planet3, p3Start] = usePlanet({ orbitRadius: 8, planetRadius: 0.4 });
+  const [planet4, p4Start] = usePlanet({ orbitRadius: 10, planetRadius: 0.8 });
+  const [planet5, p5Start] = usePlanet({ orbitRadius: 12, planetRadius: 0.6 });
 
   scene.add(planet1);
   scene.add(planet2);
