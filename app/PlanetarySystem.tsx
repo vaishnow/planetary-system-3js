@@ -15,19 +15,18 @@ function PlanetarySystem() {
   const { sphere } = useSphere({ color: "#fb2", radius: 2 });
   scene.add(sphere);
 
-  // planet1
-  const { planet: planet1,revolve } = usePlanet({ orbitRadius: 4, planetRadius: 1 });
-  scene.add(planet1);
+  // Planets
+  const [planet1, p1Start] = usePlanet({ orbitRadius: 4, planetRadius: 1 });
+  const [planet2, p2Start] = usePlanet({ orbitRadius: 6, planetRadius: 1 });
 
-  // planet2
-  const { planet: planet2 } = usePlanet({ orbitRadius: 6, planetRadius: 1 });
+  scene.add(planet1);
   scene.add(planet2);
 
   const animate = () => {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
-    planet1.rotateY(.01)
-    revolve()
+    p1Start();
+    p2Start();
   };
 
   useEffect(() => {

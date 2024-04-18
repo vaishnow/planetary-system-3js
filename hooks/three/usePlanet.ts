@@ -4,7 +4,10 @@ import useSphere from "./useSphere";
 
 type Props = { orbitRadius: number; planetRadius: number };
 
-function usePlanet({ orbitRadius = 5, planetRadius = Math.random() }: Props) {
+function usePlanet({
+  orbitRadius,
+  planetRadius = Math.random(),
+}: Props): [THREE.Group<THREE.Object3DEventMap>, () => void] {
   const { ring: orbit } = useOrbit({ radius: orbitRadius });
   const { sphere } = useSphere({ radius: planetRadius, orbitRadius });
 
@@ -13,10 +16,12 @@ function usePlanet({ orbitRadius = 5, planetRadius = Math.random() }: Props) {
   planet.add(sphere);
 
   const revolve = () => {
-    planet.rotateX(-(Math.random() * 0.01));
-    planet.rotateZ(-(Math.random() * 0.01));
+    // Just making random speeds for planet rotation
+    let speed = -Math.random() * 0.015;
+    if (Math.random() > 0.5) speed /= 10;
+    planet.rotateY(speed);
   };
 
-  return { planet,revolve };
+  return [planet, revolve];
 }
 export default usePlanet;
