@@ -22,6 +22,10 @@ function usePlanet({
     planet.rotateY(speed);
   };
 
+  // Giving a slight tilt to Orbits
+  planet.rotateZ(Math.random()*.07)
+  planet.rotateX(Math.random()*.07)
+
   return [planet, revolve];
 }
 export default usePlanet;
