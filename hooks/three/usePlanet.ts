@@ -24,8 +24,12 @@ function usePlanet({
   };
 
   // Giving a slight tilt to Orbits
-  planet.rotateZ(Math.random() * 0.07);
-  planet.rotateX(Math.random() * 0.07);
+  planet.rotateZ(
+    Math.random() > 0.5 ? -(Math.random() * 0.07) : Math.random() * 0.07
+  );
+  planet.rotateX(
+    Math.random() > 0.5 ? -(Math.random() * 0.07) : Math.random() * 0.07
+  );
 
   return [planet, revolve];
 }
