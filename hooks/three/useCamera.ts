@@ -16,10 +16,10 @@ type Props = {
 function useCamera({
   position = { x: 5, y: 5, z: 5 },
   lookPosition = { x: 0, y: 0, z: 0 },
-  fov = 75,
+  fov = 45,
   height = window.innerHeight,
   width = window.innerWidth,
-  near = 5,
+  near = 1,
   far = 50,
 }: Props) {
   const canvasRef = useRef<HTMLDivElement>(null);
