@@ -9,7 +9,7 @@ function usePlanet({
   planetRadius = Math.random(),
 }: Props): [THREE.Group<THREE.Object3DEventMap>, () => void] {
   const { ring: orbit } = useOrbit({ radius: orbitRadius });
-  const { sphere } = useSphere({ radius: planetRadius, orbitRadius });
+  const { sphere } = useSphere({ radius: planetRadius, orbitRadius ,randomMaterial:true});
 
   const planet = new THREE.Group();
   planet.add(orbit);
