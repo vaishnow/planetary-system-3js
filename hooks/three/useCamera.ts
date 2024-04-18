@@ -1,5 +1,7 @@
 "use client";
+
 import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useEffect, useRef } from "react";
 import useScreenSize from "../useScreenSize";
 
@@ -20,7 +22,7 @@ function useCamera({
   height = window.innerHeight,
   width = window.innerWidth,
   near = 1,
-  far = 50,
+  far = 150,
 }: Props) {
   const canvasRef = useRef<HTMLDivElement>(null);
 
@@ -35,6 +37,8 @@ function useCamera({
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(width, height);
 
+  const controls = new OrbitControls(camera, renderer.domElement);
+
   camera.position.set(position.x, position.y, position.z);
   camera.lookAt(
     new THREE.Vector3(lookPosition.x, lookPosition.y, lookPosition.z)
@@ -44,7 +48,7 @@ function useCamera({
     canvasRef.current?.appendChild(renderer.domElement);
   }, []);
 
-  return { scene, camera, canvasRef, renderer };
+  return { scene, camera, canvasRef, renderer, controls };
 }
 
 export default useCamera;

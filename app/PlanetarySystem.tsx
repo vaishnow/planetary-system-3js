@@ -6,7 +6,7 @@ import usePlanet from "@/hooks/three/usePlanet";
 import useSphere from "@/hooks/three/useSphere";
 
 function PlanetarySystem() {
-  const { canvasRef, scene, camera, renderer } = useCamera({
+  const { canvasRef, scene, camera, renderer, controls } = useCamera({
     lookPosition: { x: 0, y: 0, z: 5 },
     position: { x: 0, y: 5, z: 20 },
   });
@@ -36,6 +36,7 @@ function PlanetarySystem() {
     p3Start();
     p4Start();
     p5Start();
+    controls.update();
   };
 
   useEffect(() => {
