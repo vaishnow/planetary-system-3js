@@ -19,8 +19,8 @@ function useCamera({
   fov = 75,
   height = window.innerHeight,
   width = window.innerWidth,
-  near = 1,
-  far = 1000,
+  near = 5,
+  far = 50,
 }: Props) {
   const canvasRef = useRef<HTMLDivElement>(null);
 

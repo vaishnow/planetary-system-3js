@@ -9,7 +9,7 @@ function useOrbit({ radius = 5 }: Props) {
     radius,
     radius,
     0.05,
-    512,
+    128,
     1,
     true
   );
