@@ -7,8 +7,8 @@ type Props = {
 function useOrbit({ radius = 5 }: Props) {
   const geometry = new THREE.CylinderGeometry(
     radius,
-    radius,
-    0.05,
+    radius+0.02,
+    0.02,
     128,
     1,
     true
