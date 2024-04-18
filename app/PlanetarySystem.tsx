@@ -14,9 +14,11 @@ function PlanetarySystem() {
 
   // Sun
   const { sphere: sun } = useSphere({ color: "#fb2", radius: 2 });
-  sun.add(new THREE.PointLight("#fff",1000,100))
+  const sunLight = new THREE.PointLight("#fff", 1000, 100);
+  sunLight.castShadow = true;
+  sun.add(sunLight);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight("#fff",.5));
+  scene.add(new THREE.AmbientLight("#fff", 0.5));
 
   // Planets
   const [planet1, p1Start] = usePlanet({ orbitRadius: 4, planetRadius: 0.3 });

@@ -36,6 +36,7 @@ function useCamera({
 
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(width, height);
+  renderer.shadowMap.enabled = true;
 
   const controls = new OrbitControls(camera, renderer.domElement);
 

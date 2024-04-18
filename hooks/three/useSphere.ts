@@ -29,6 +29,10 @@ function useSphere({
   } else material = new THREE.MeshBasicMaterial({ color });
 
   const sphere = new THREE.Mesh(geometry, material);
+  if (randomMaterial) {
+    sphere.castShadow = true;
+    sphere.receiveShadow = true;
+  }
   sphere.rotateY(Math.random() * radius * 100); // totally random rotation for a random placement on orbit
   orbitRadius && sphere.translateX(orbitRadius);
 
